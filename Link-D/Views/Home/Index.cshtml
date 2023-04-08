@@ -1,8 +1,62 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
-
-<div class="text-center">
+@*<div class="container">
+<div class="float-left">
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+<div class="float-right ">
+    <img style="vertical-align:middle" src="/pics/_6313d851-3acf-43f1-a2ae-3a4ddcdaaa55.jpg" />
+</div>
+</div>*@
+
+<div class="container">
+    <div class="row d-flex justify-content-between">
+        <div class="col-md-6">
+            <div class="container">
+                <h1 class="display-4">Welcome</h1>
+                <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+                  <div class="row">
+                     <div class="w-75">
+                        <label for="email">Email address:</label>
+                        <input type="email" class="form-control" id="email">
+                     </div>
+                  </div>
+                <div class="row">
+                    <div style="margin-top:15px;position: relative;" class="w-75">
+                          <label for="pwd">Password:</label>
+                        <input type="password" class="form-control" id="pwd">
+                        <i class="fa fa-eye-slash" id="togglePassword" style="position: absolute; right: 20px; top: 35px; cursor: pointer;"></i>
+                       </div>
+                  </div>
+
+                <a class="mt-1 d-inline-block">Forgot Password?</a>
+                <button class="btn btn-primary btn-block mt-4 d-block w-75" style="font-weight: bold; border-radius: 20px;">
+                    Sign in
+                </button>
+                <div class="row w-75 mt-3">
+                    <div class="col-md-5">
+                        <hr class="bg-primary border-2 border-top border-primary">
+                    </div>
+                    <div class="col-md-2">
+                        <p class="px-3">or</p>
+                    </div>
+                    <div class="col-md-5">
+                        <hr class="bg-danger border-2 border-top border-danger">
+                    </div>
+                </div>
+               
+                <button  class="btn btn-light btn-block mt-3 d-block w-75 border signup" style=" border-radius: 30px; border-color: black;">
+                   New to LinkD? Join now
+                </button>
+
+           </div>
+
+
+        </div>
+        <div class="col-md-6">
+            <img src="~/pics/_6313d851-3acf-43f1-a2ae-3a4ddcdaaa55.jpg" class="img-fluid" alt="Responsive image" />
+            </div>
+    </div>
 </div>

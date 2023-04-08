@@ -9,7 +9,7 @@
 
   <ItemGroup>
     <Folder Include="Controllers\Apis\" />
-    <Folder Include="Controllers\Views\" />
+    <Folder Include="wwwroot\pics\" />
   </ItemGroup>
 
   <ItemGroup>

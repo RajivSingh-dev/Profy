@@ -5,8 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Link_D</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/Link_D.styles.css" asp-append-version="true" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    @RenderSection("LinkHub",required: false)
+    @RenderSection("head", false)
+    
 </head>
 <body>
     <header>
@@ -17,16 +21,44 @@
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1 navbar-right">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index"><span class="glyphicon glyphicon-user"></span>Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy"><span class="glyphicon glyphicon-log-in"></span>Privacy</a>
-                        </li>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                    <ul class="navbar-nav ">
+                        @if (User.Identity?.IsAuthenticated == true)
+                        {
+                             <li class="nav-item">
+                                 <button class="btn btn-primary" style="font-weight: bold; border-radius: 20px;margin-right:100px">
+                                   LogOut
+                                 </button>
+                            </li>
+                        }
+                        else 
+                        {
+                            @if (!IsSectionDefined("LinkHub"))
+                            {
+                                <li >
+                                    <button class="btn btn-light btn-block d-block border me-3 signup" style=" border-radius: 30px; border-color: black;">
+                                        Join now
+                                    </button>
+                                </li>
+                                <li class="nav-item">
+                                    <button class="btn btn-primary" style="font-weight: bold; border-radius: 20px;margin-right:100px">
+                                        Sign in
+                                    </button>
+                                </li>
+                            }
+                        } 
                     </ul>
                 </div>
+              @*  <div class="navbar-nav navbar-right navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1 navbar-right">
+                        <li class="nav-item" margin="10px">
+                            <button style="font-size:24px">Sign-in <i class="fa fa-sign-in"></i></button>
+                        </li>
+                        <li class="nav-item" >
+                            <button style="font-size:24px">Sign-Up <i class="fa fa-sign-in"></i></button>
+                        </li>
+                    </ul>
+                </div>*@
             </div>
         </nav>
     </header>
