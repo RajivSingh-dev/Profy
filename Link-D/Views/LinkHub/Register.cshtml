@@ -7,30 +7,26 @@
     <script src="/js/SignUp.js" defer></script>
 
  }
-<div class="d-flex justify-content-center">
-    <div class="mx-auto container">
-        <h1 class="text-center">Signup Form</h1>
-        <form class="needs-validation" novalidate>
+
+
+
+<div class="container d-flex flex-column justify-content-between  my-5" style="background-color: #F3F6F8;">
+   
+    <h3 class="text-center" style="font-weight: 400;"> Sign Up</h3>
+    <form style="margin-left:400px" id="my-form">
             <div class="form-row">
                 <div class="col-md-6 mb-3">
                     <label for="firstName">First name</label>
                     <input type="text" class="form-control" id="firstName" placeholder="Enter first name" required>
-                    <div class="valid-feedback">
-                        Looks good!
-                    </div>
-                    <div class="invalid-feedback">
-                        Please enter a valid first name.
+                    <div class="error-container" hidden>
+                        <p style="color: red;" class="error-txt"></p>
                     </div>
                 </div>
                 <div class="col-md-6 mb-3">
                     <label for="lastName">Last name</label>
                     <input type="text" class="form-control" id="lastName" placeholder="Enter last name" required>
-                    <div class="valid-feedback">
-                        Looks good!
-                    </div>
-                    <div class="invalid-feedback">
-                        Please enter a valid last name.
-                    </div>
+                <div class="error-container" hidden>
+                    <p style="color: red;" class="error-txt"></p>
                 </div>
             </div>
             <div class="form-row">
@@ -38,35 +34,60 @@
                     <label for="email">Email</label>
                     <div class="input-group">
                         <div class="input-group-prepend">
-                            <span class="input-group-text" id="emailPrepend"><i class="fas fa-envelope"></i></span>
+                        <span class="input-group-text" id="emailPrepend"><i class="fas fa-envelope fs-4"></i></span>
                         </div>
                         <input type="email" class="form-control" id="email" placeholder="Enter email" aria-describedby="emailPrepend" required>
-                        <div class="valid-feedback">
-                            Looks good!
-                        </div>
-                        <div class="invalid-feedback">
-                            Please enter a valid email.
-                        </div>
-                    </div>
+                </div>
+                    <div class="error-container" hidden>
+                    <p style="color: red;"></p>
+                </div>
                 </div>
                 <div class="col-md-6 mb-3">
                     <label for="password">Password</label>
                     <div class="input-group">
                         <div class="input-group-prepend">
-                            <span class="input-group-text" id="passwordPrepend"><i class="fas fa-lock"></i></span>
+                        <span class="input-group-text" id="passwordPrepend"><i class="fas fa-lock fs-4"></i></span>
                         </div>
                         <input type="password" class="form-control" id="password" placeholder="Enter password" aria-describedby="passwordPrepend" required>
                         <div class="valid-feedback">
                             Looks good!
                         </div>
-                        <div class="invalid-feedback">
+                    <div class="invalid-feedback password">
+                                Please enter a valid password.
+                            </div>
+                    </div>
+                <div id="pwderror" style="color: red;" hidden>
+                                <p >Your password does not meet the following requirements:</p>
+                                    <ul>
+                                        <li>At least 8 characters</li>
+                                        <li>At least one letter</li>
+                                        <li>At least one number</li>
+                                        <li>At least one special character</li>
+                                    </ul>
+
+                            </div>
+                    </div>
+        </div>
+                <div class="col-md-6 mb-3">
+                    <label for="password">Confirm Password</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                        <span class="input-group-text" id="passwordPrepend"><i class="fas fa-lock fs-4"></i></span>
+                        </div>
+                        <input type="password" class="form-control" id="confirmpassword" placeholder="Re-Enter password" aria-describedby="passwordPrepend" required>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                    <div class="invalid-feedback passwordconfirm">
                             Please enter a valid password.
                         </div>
                     </div>
+                       <div id="confirmpass" hidden>
+                            <p style="color: red;">Password not matching</p>
+                       </div>
                 </div>
+           
+            <button class="btn btn-primary" id="submit" type="button" onclick="signUp();">Submit</button>
             </div>
-            <button class="btn btn-primary" type="submit">Submit</button>
         </form>
-
-    </div>
 </div>

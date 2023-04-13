@@ -1,50 +1,77 @@
 ﻿
+function signUp() {
+    $(".error-container").attr("hidden", "true");
 
-function validateForm() {
-    // Get the form inputs
-    var name = $("#name").val();
+    var fname = $("#firstName").val();
+    var lname = $("#lastName").val();
     var email = $("#email").val();
     var password = $("#password").val();
-    var confirmPassword = $("#confirm-password").val();
-    var gender = $("#gender").val();
-    var termsAndConditions = $("#terms-and-conditions").prop("checked");
+    var confirmPassword = $("#confirmpassword").val();
 
-    // Initialize the error variables
-    var nameError = "";
-    var emailError = "";
-    var passwordError = "";
-    var confirmPasswordError = "";
-    var genderError = "";
-    var termsAndConditionsError = "";
 
-    // Initialize the regex patterns
-    var namePattern = /^[a-zA-Z ]+$/;
+    var namePattern = /^[a-zA-Z]+$/;
     var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+    var passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
 
-    // Validate the name input
-    if (name == "") {
-        nameError = "Name is required";
-    } else if (!namePattern.test(name)) {
-        nameError = "Name must contain only letters and spaces";
+    var isValid = true;
+
+    if (fname.length == 0) {
+        showError("#firstName", "Please enter a valid first name.");
+        isValid = false;
+    }
+    else if (!namePattern.test(fname)) {
+        showError("#firstName", "Name must contain only letters.");
+        isValid = false;
     }
 
-    // Validate the email input
-    if (email == "") {
-        emailError = "Email is required";
+    if (lname.length == 0) {
+        showError("#lastName", "Please enter a valid last name.");
+        isValid = false;
+    }
+    else if (!namePattern.test(lname)) {
+        showError("#lastName", "Name must contain only letters.");
+        isValid = false;
     }
 
+    if (!emailPattern.test(email)) {
+        showError("#email", "Email must contain @");
+        isValid = false;
+    }
+
+    if (password.length < 8 && !passwordPattern.test(password)) {
+        $("#pwderror").removeAttr("hidden");
+        isValid = false;
+    }
+
+    if (password != confirmPassword) {
+        $("#confirmpass").removeAttr("hidden");
+        isValid = false;
+
+    }
+
+    var formData = {
+        FName: fname,
+        LName: lname,
+        Email: email,
+        Password: password
+    };
+    if (isValid) {
+        $.ajax({
+            url: "/api/LinkHub/Register",
+            type: "Post",
+            data: JSON.stringify(formData),
+            contentType: "application/json",
+            success: function (data) {
+                alert("submitted");
+            },
+            error: function (xhr, status, error) {
+                alert("An error occurred: " + status + " " + error);
+            }
+        }
+        )
+    }
 }
 
-
-        $(document).ready(function () {
-                var forms = $('.needs-validation');
-        // Loop over them and prevent submission
-        forms.each(function () {
-            $(this).on('submit', function (event) {
-                if ($(this).get(0).checkValidity() === false) {
-                    event.preventDefault();
-                }
-                $(this).addClass('was-validated');
-            });
-                });
-            });
+function showError(inputCtrlId, msg) {
+    $(inputCtrlId).closest("div").find(".error-container").removeAttr("hidden").find(".error-txt").text(msg);
+}

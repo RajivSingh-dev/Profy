@@ -1,6 +1,16 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@*@section header1
+    {
+    <h1>test</h1>
+    }
+*@
 @*<div class="container">
 <div class="float-left">
     <h1 class="display-4">Welcome</h1>
@@ -10,7 +20,6 @@
     <img style="vertical-align:middle" src="/pics/_6313d851-3acf-43f1-a2ae-3a4ddcdaaa55.jpg" />
 </div>
 </div>*@
-
 <div class="container">
     <div class="row d-flex justify-content-between">
         <div class="col-md-6">
@@ -21,18 +30,21 @@
                      <div class="w-75">
                         <label for="email">Email address:</label>
                         <input type="email" class="form-control" id="email">
+                        <div class="email" hidden>
+                            <p style="color: red;"></p>
+                        </div>
                      </div>
                   </div>
                 <div class="row">
                     <div style="margin-top:15px;position: relative;" class="w-75">
                           <label for="pwd">Password:</label>
                         <input type="password" class="form-control" id="pwd">
-                        <i class="fa fa-eye-slash" id="togglePassword" style="position: absolute; right: 20px; top: 35px; cursor: pointer;"></i>
+                        <i class="fa fa-eye" id="togglePassword" style="position: absolute; right: 20px; top: 35px; cursor: pointer;"></i>
                        </div>
                   </div>
 
                 <a class="mt-1 d-inline-block">Forgot Password?</a>
-                <button class="btn btn-primary btn-block mt-4 d-block w-75" style="font-weight: bold; border-radius: 20px;">
+                <button class="btn btn-primary btn-block mt-4 d-block w-75" id="signin" style="font-weight: bold; border-radius: 20px;">
                     Sign in
                 </button>
                 <div class="row w-75 mt-3">

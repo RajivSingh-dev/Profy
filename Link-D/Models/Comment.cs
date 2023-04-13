@@ -7,7 +7,7 @@ namespace Link_D.Models
 
         public int Id { get; set; }
 
-        public string Description { get; set; }
+        public string Content { get; set; }
 
         public DateTime CreatedOn { get; set; }
         public DateTime LastEdited { get; set; }
@@ -15,6 +15,7 @@ namespace Link_D.Models
 
         public int PostId { get; set; }
         public Post post { get; set; }
+        public List<Reply> reply { get; set; }
 
     }
 }
