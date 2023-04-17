@@ -17,77 +17,55 @@
             <div class="form-row">
                 <div class="col-md-6 mb-3">
                     <label for="firstName">First name</label>
-                    <input type="text" class="form-control" id="firstName" placeholder="Enter first name" required>
-                    <div class="error-container" hidden>
-                        <p style="color: red;" class="error-txt"></p>
+                <input type="text" class="form-control" id="firstName" placeholder="Enter first name" required>
+                    <div style="color: red;">
+                    <p hidden class="empty-field" >Field Cannot be Empty</p>
+                    <p hidden class="invalid-text">First Name contains only letters.</p>
                     </div>
                 </div>
                 <div class="col-md-6 mb-3">
                     <label for="lastName">Last name</label>
-                    <input type="text" class="form-control" id="lastName" placeholder="Enter last name" required>
-                <div class="error-container" hidden>
-                    <p style="color: red;" class="error-txt"></p>
-                </div>
+                <input type="text" class="form-control" id="lastName" placeholder="Enter last name"  required>
+                <div style="color: red;">
+                    <p hidden class="empty-field">Field Cannot be Empty</p>
+                    <p hidden class="invalid-text">Last Name contains only letters.</p>
+                    </div>
+            </div>
             </div>
             <div class="form-row">
                 <div class="col-md-6 mb-3">
                     <label for="email">Email</label>
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                        <span class="input-group-text" id="emailPrepend"><i class="fas fa-envelope fs-4"></i></span>
-                        </div>
-                        <input type="email" class="form-control" id="email" placeholder="Enter email" aria-describedby="emailPrepend" required>
+                <input type="email" class="form-control" id="email" placeholder="Enter email" aria-describedby="emailPrepend" required>
+                <div style="color: red;" >
+                    <p hidden class="empty-field">Field Cannot be Empty</p>
+                    <p hidden class="invalid-text">Email must be valid and it should contains @@.</p>
                 </div>
-                    <div class="error-container" hidden>
-                    <p style="color: red;"></p>
-                </div>
+               
+                    
                 </div>
                 <div class="col-md-6 mb-3">
                     <label for="password">Password</label>
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                        <span class="input-group-text" id="passwordPrepend"><i class="fas fa-lock fs-4"></i></span>
-                        </div>
-                        <input type="password" class="form-control" id="password" placeholder="Enter password" aria-describedby="passwordPrepend" required>
-                        <div class="valid-feedback">
-                            Looks good!
-                        </div>
-                    <div class="invalid-feedback password">
-                                Please enter a valid password.
-                            </div>
-                    </div>
-                <div id="pwderror" style="color: red;" hidden>
-                                <p >Your password does not meet the following requirements:</p>
+                        <input type="password" class="form-control" id="password" placeholder="Enter password" required>
+                <div style="color: red;" hidden class="invalid-text">
+                    <p >Your password does not meet the following requirements:</p>
                                     <ul>
                                         <li>At least 8 characters</li>
                                         <li>At least one letter</li>
                                         <li>At least one number</li>
                                         <li>At least one special character</li>
                                     </ul>
-
                             </div>
-                    </div>
         </div>
                 <div class="col-md-6 mb-3">
                     <label for="password">Confirm Password</label>
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                        <span class="input-group-text" id="passwordPrepend"><i class="fas fa-lock fs-4"></i></span>
-                        </div>
-                        <input type="password" class="form-control" id="confirmpassword" placeholder="Re-Enter password" aria-describedby="passwordPrepend" required>
-                        <div class="valid-feedback">
-                            Looks good!
-                        </div>
-                    <div class="invalid-feedback passwordconfirm">
-                            Please enter a valid password.
-                        </div>
-                    </div>
-                       <div id="confirmpass" hidden>
-                            <p style="color: red;">Password not matching</p>
-                       </div>
+                <input type="password" class="form-control" id="confirmpassword" placeholder="Re-Enter password" aria-describedby="passwordPrepend" required>
+                <div style="color: red;" hidden class="invalid-text">
+                    <p>Password not matching :</p>
                 </div>
-           
-            <button class="btn btn-primary" id="submit" type="button" onclick="signUp();">Submit</button>
-            </div>
+       </div>
+                      
+                </div>
+                
+                <button class="btn btn-primary" id="submit" type="button" onclick="signUp();">Submit</button>
         </form>
 </div>
