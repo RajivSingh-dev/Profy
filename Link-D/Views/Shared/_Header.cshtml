@@ -1,0 +1,37 @@
+﻿
+@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+<header>
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <div class="container-fluid">
+            <a class="navbar-brandn ms-5" asp-area="" asp-controller="Home" asp-action="Index">
+                <img src="~/pics/OIG (1).jpg" class="img-thumbnail border-2 border-dark" alt="Logo" width="50" height="50">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                <ul class="navbar-nav ">
+                    @*    <li class="nav-item">
+                            <button class="btn btn-primary" style="font-weight: bold; border-radius: 20px;margin-right:100px">
+                                LogOut
+                            </button>
+                        </li>*@
+                            <li>
+                                <button class="btn btn-light btn-block d-block border me-3 signup" style=" border-radius: 30px; border-color: black;">
+                                    Join now
+                                </button>
+                            </li>
+                            <li class="nav-item">
+                                <button class="btn btn-primary" style="font-weight: bold; border-radius: 20px;margin-right:100px">
+                                    Sign in
+                                </button>
+                            </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>

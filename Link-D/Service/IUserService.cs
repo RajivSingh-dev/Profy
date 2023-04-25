@@ -1,12 +1,13 @@
-﻿using Link_D.Models;
+﻿using Link_D.Models.Api;
+using Link_D.Models.Data;
 
 namespace Link_D.Service
 {
     public interface IUserService
     {
-        public void SaveUserData(User user);
+        public bool SaveUserData(User user);
 
-        public bool CheckUserExists(string email,string password);
+        public bool CheckUserExists(Login model);
 
     }
 }

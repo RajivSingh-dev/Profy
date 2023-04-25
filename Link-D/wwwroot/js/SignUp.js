@@ -20,15 +20,21 @@ function signUp() {
     };
     if (isValid) {
         $.ajax({
-            url: "/api/LinkHub/Register",
+            url: "/api/LinkHubApi/Register",
             type: "Post",
             data: JSON.stringify(formData),
             contentType: "application/json",
             success: function (data) {
-                alert("submitted");
+                window.location.href = "/LinkHubApi/Home"
             },
-            error: function (xhr, status, error) {
-                alert("An error occurred: " + status + " " + error);
+            error: function (error) {
+                if (error.status == 409)
+                {
+                    $("#emailExistsError").text(error.responseText);
+                    $("#emailExistsError").removeAttr("hidden");
+                }   
+                    
+                    
             }
         }
         )

@@ -1,7 +1,5 @@
 ﻿
-@section LinkHub
-{
-}
+
 
 @section Scripts {
     <script src="/js/SignUp.js" defer></script>
@@ -9,11 +7,15 @@
  }
 
 
-
+@section Header {
+    @Html.Partial("_Header")
+ }
 <div class="container d-flex flex-column justify-content-between  my-5" style="background-color: #F3F6F8;">
    
     <h3 class="text-center" style="font-weight: 400;"> Sign Up</h3>
-    <form style="margin-left:400px" id="my-form">
+    <div style="color: red;" class="offset-md-4" id="emailExistsError" hidden>
+    </div>
+    <form class="offset-md-4" id="my-form">
             <div class="form-row">
                 <div class="col-md-6 mb-3">
                     <label for="firstName">First name</label>
@@ -26,10 +28,10 @@
                 <div class="col-md-6 mb-3">
                     <label for="lastName">Last name</label>
                 <input type="text" class="form-control" id="lastName" placeholder="Enter last name"  required>
-                <div style="color: red;">
-                    <p hidden class="empty-field">Field Cannot be Empty</p>
-                    <p hidden class="invalid-text">Last Name contains only letters.</p>
-                    </div>
+                    <div style="color: red;">
+                        <p hidden class="empty-field">Field Cannot be Empty</p>
+                        <p hidden class="invalid-text">Last Name contains only letters.</p>
+                        </div>
             </div>
             </div>
             <div class="form-row">

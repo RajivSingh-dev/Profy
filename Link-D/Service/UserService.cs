@@ -1,28 +1,42 @@
-﻿using Link_D.Models;
+﻿using Link_D.Models.Api;
+using Link_D.Models.Data;
 
 namespace Link_D.Service
 {
     public class UserService : IUserService
     {
 
-        private ProjectContext _projectContext;
+        private ProjectContext projectContext;
 
         public UserService(ProjectContext projectContext)
         {
-            _projectContext = projectContext;
+            this.projectContext = projectContext;
         }
 
-        public void SaveUserData(User user)
+        public bool SaveUserData(User user)
         {
-            _projectContext.Users.Add(user);
 
-            _projectContext.SaveChanges();
+            if (!IsNew(user.Email))
+            {
+                projectContext.Users.Add(user);
+                projectContext.SaveChanges();
+                return true;
+            }
+
+
+            return false;
         }
         
-        public bool CheckUserExists(string email,string password)
+        public bool CheckUserExists(Login model)
         {
 
-            return _projectContext.Users.Any(x => x.Email == email && x.Password == password);  
+            return projectContext.Users.Any(x => x.Email == model.Email && x.Password == model.Password);  
+        }
+
+        public bool IsNew(string email) {
+
+            return projectContext.Users.Any(u => u.Email == email);
+        
         }
     }
 }

@@ -8,7 +8,13 @@ namespace Link_D.Controllers.Views
         public IActionResult Register()
         {
             return View();
+        }  
+        
+        public IActionResult Home()
+        {
+            return View();
         }
+
        
 
     }

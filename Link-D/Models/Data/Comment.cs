@@ -1,6 +1,6 @@
 ﻿using System.Reflection.Metadata;
 
-namespace Link_D.Models
+namespace Link_D.Models.Data
 {
     public class Comment
     {

@@ -1,6 +1,4 @@
-﻿
-
-namespace Link_D.Models
+﻿namespace Link_D.Models.Api
 {
     public class Signup
     {

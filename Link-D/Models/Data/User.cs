@@ -1,4 +1,4 @@
-﻿namespace Link_D.Models
+﻿namespace Link_D.Models.Data
 {
     public class User
     {
@@ -8,7 +8,7 @@
         public string LName { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
-       
+
 
 
         public List<Post>? Posts { get; set; }

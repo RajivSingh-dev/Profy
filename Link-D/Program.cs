@@ -1,4 +1,4 @@
-using Link_D.Models;
+using Link_D.Models.Data;
 using Link_D.Service;
 using Microsoft.EntityFrameworkCore;
 

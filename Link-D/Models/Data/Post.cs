@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Link_D.Models
+namespace Link_D.Models.Data
 {
     public class Post
     {
@@ -11,7 +11,7 @@ namespace Link_D.Models
         public DateTime LastEdited { get; set; }
         public int LikesCount { get; set; }
 
-        public int UserId { get; set; }   
+        public int UserId { get; set; }
         public User User { get; set; }
         public List<Comment> comments { get; set; }
 

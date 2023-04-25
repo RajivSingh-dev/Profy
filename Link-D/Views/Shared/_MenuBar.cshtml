@@ -1,0 +1,67 @@
+﻿
+@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+<header>
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3" style="height:60px">
+        <div class="container-fluid" style="margin-left:200px">
+            <a class="navbar-brandn ms-5" asp-area="" asp-controller="Home" asp-action="Index">
+                <img src="~/pics/OIG (1).jpg" class="img-thumbnail border-2 border-dark" alt="Logo" width="40" height="40">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse ms-2" id="navbarSupportedContent">
+                    <div class="input-group w-25">
+                        <input type="text" class="form-control" placeholder="Search" aria-label="Search">
+          </div>
+                <ul class="navbar-nav" style="margin-left:200px">
+                    <li class="nav-item active">
+                        <a class="nav-link d-flex flex-column align-items-center" href="#">
+                            <i class="fas fa-home"></i>
+                            Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link d-flex flex-column align-items-center" href="#">
+                            <i class="fas fa-user-friends"></i>
+                            My Network
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link d-flex flex-column align-items-center" href="#">
+                            <i class="fas fa-briefcase"></i>
+                            Jobs
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link d-flex flex-column align-items-center" href="#">
+                            <i class="fas fa-comment-dots"></i>
+                            Messaging
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link d-flex flex-column align-items-center" href="#">
+                            <i class="fas fa-bell"></i>
+                            Notifications
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fas fa-user-circle"></i>
+                            Me
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">View Profile</a>
+                            <a class="dropdown-item" href="#">Settings</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Sign Out</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>

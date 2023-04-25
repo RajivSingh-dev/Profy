@@ -10,65 +10,14 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     @RenderSection("LinkHub",required: false)
     @RenderSection("head", false)
-    
+        
 </head>
 <body style="background-color: #F3F6F8;">
-   
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brandn ms-5" asp-area="" asp-controller="Home" asp-action="Index">
-                    <img src="~/pics/OIG (1).jpg" class="img-thumbnail border-2 border-dark" alt="Logo" width="50" height="50">
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-                    <ul class="navbar-nav ">
-                        @if (User.Identity?.IsAuthenticated == true)
-                        {
-                             <li class="nav-item">
-                                 <button class="btn btn-primary" style="font-weight: bold; border-radius: 20px;margin-right:100px">
-                                   LogOut
-                                 </button>
-                            </li>
-                        }
-                        else 
-                        {
-                            @if (!IsSectionDefined("LinkHub"))
-                            {
-                                <li >
-                                    <button class="btn btn-light btn-block d-block border me-3 signup" style=" border-radius: 30px; border-color: black;">
-                                        Join now
-                                    </button>
-                                </li>
-                                <li class="nav-item">
-                                    <button class="btn btn-primary" style="font-weight: bold; border-radius: 20px;margin-right:100px">
-                                        Sign in
-                                    </button>
-                                </li>
-                            }
-                        } 
-                    </ul>
-                </div>
-              @*  <div class="navbar-nav navbar-right navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1 navbar-right">
-                        <li class="nav-item" margin="10px">
-                            <button style="font-size:24px">Sign-in <i class="fa fa-sign-in"></i></button>
-                        </li>
-                        <li class="nav-item" >
-                            <button style="font-size:24px">Sign-Up <i class="fa fa-sign-in"></i></button>
-                        </li>
-                    </ul>
-                </div>*@
-            </div>
-        </nav>
-    </header>
-    <div class="container">
+    @RenderSection("Header", required: false)
+@*    very important use min-vh-100 to stick footer at bottom. it will set the minimum height to 100% percent of viewport height *@
+    <div class="container wrapper d-flex flex-column min-vh-100">
         <main role="main" class="pb-3">
-@*            <div class="banner"> @RenderSection("header1", required: false) </div>
-*@            @RenderBody()
+            @RenderBody()
         </main>
     </div>
 

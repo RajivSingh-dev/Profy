@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-namespace Link_D.Models
+namespace Link_D.Models.Data
 {
     public class ProjectContext : DbContext
     {
@@ -8,10 +8,10 @@ namespace Link_D.Models
         {
         }
 
-        public DbSet<User> Users { get; set; }  
-        public DbSet<Post> post { get; set; }  
-        public DbSet<Comment> comments { get; set; }  
-        public DbSet<Reply> replies { get; set; }  
+        public DbSet<User> Users { get; set; }
+        public DbSet<Post> post { get; set; }
+        public DbSet<Comment> comments { get; set; }
+        public DbSet<Reply> replies { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
