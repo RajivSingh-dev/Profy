@@ -3,7 +3,6 @@
 }
 
 
-
 @section Header {
     @Html.Partial("_Header")
  }
@@ -24,7 +23,7 @@
                      </div>
                   </div>
                 <div class="row">
-                    <div style="margin-top:15px;position: relative;" class="w-75">
+                    <div style="margin-top:10px;position: relative;" class="w-75">
                           <label for="pwd">Password:</label>
                         <input type="password" class="form-control" id="password">
                         <i class="fa fa-eye" id="togglePassword" onclick="tooglePassword(this)" style="position: absolute; right: 20px; top: 35px; cursor: pointer;"></i>
@@ -65,3 +64,8 @@
             </div>
     </div>
 </div>
+
+@section Scripts {
+    <script src="/js/SignUp.js" defer></script>
+
+ }

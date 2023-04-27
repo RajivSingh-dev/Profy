@@ -56,6 +56,8 @@ $("#signin").click(function () {
 
 })
 
+
+
 function tooglePassword(element) {
 
     var type = $(element).prev().attr("type");
@@ -68,4 +70,5 @@ function tooglePassword(element) {
     }
     $(element).prev().toggleClass("fa-eye-slash fa-eye");
 
-}
+} 
+

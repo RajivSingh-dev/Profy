@@ -1,10 +1,40 @@
-﻿@section Header {
+﻿
+@section Scripts {
+    <script src="/js/Post.js" defer></script>
+
+ }
+
+@section Header {
     @Html.Partial("_MenuBar")
  }
+
+
 <div class="container">
     <div class="row">
+        <div class="col-md-6 offset-md-3 ">
+            <div class="card border-1 shadow-sm rounded-3">
+                <div class="card-body">
+                    <form>
+                        <div class="input-group mb-3">
+                            <img src="~/pics/OIG (1).jpg" class="rounded-circle me-3" alt="User" width="40" height="40">
+                            <button class="btn btn-light btn-block d-block text-start border border-light-dark"  data-bs-toggle="modal" data-bs-target="#myModal" type="button" style="border-radius: 20px; width:500px">
+                             Start a Post
+                           </button>
+                        </div>
+                    </form>
+                    <div class="options">
+                        <button class="btn btn-light"><i class="fas fa-image"></i> Photo</button>
+                        <button class="btn btn-light"><i class="fas fa-video"></i> Video</button>
+                        <button class="btn btn-light"><i class="fas fa-file-alt"></i> Document</button>
+                        <button class="btn btn-light"><i class="fas fa-chart-bar"></i> Write article</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
         <div class="col-md-6 offset-md-3">
-            <div class="card mt-4">
+            <div class="card mt-4 border-1 shadow-sm rounded-5">
                 <div class="card-body">
                     <div class="media mb-3">
                         <img src="~/pics/OIG (1).jpg" class="mr-3 rounded-circle" alt="User" width="64" height="64">
@@ -26,4 +56,36 @@
         </div>
     </div>
 </div>
+<div class="container">
+    <div class="modal fade" id="myModal">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
 
+                <div class="modal-header">
+                    <h5 class="modal-title">Create a post</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+
+                <div class="modal-body">
+                    <div class="input-group mb-3">
+                        <img src="~/pics/OIG (1).jpg" class="rounded-circle me-3" alt="User" width="40" height="40">
+                        <div class="container vh-50 form-floating flex-grow-1">
+                            <textarea class="form-control border-0 shadow-none" oninput="inputFunction(this)" placeholder="Start a post" id="post-input" style="height:200px"></textarea>
+                        </div>
+                    </div>
+                    <div class="options">
+                        <button class="btn btn-light"><i class="fas fa-image"></i> Photo</button>
+                        <button class="btn btn-light"><i class="fas fa-video"></i> Video</button>
+                        <button class="btn btn-light"><i class="fas fa-file-alt"></i> Document</button>
+                        <button class="btn btn-light"><i class="fas fa-chart-bar"></i> Write article</button>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" disabled onclick="submitPostData()" class="btn btn-primary">Post</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

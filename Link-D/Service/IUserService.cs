@@ -9,5 +9,7 @@ namespace Link_D.Service
 
         public bool CheckUserExists(Login model);
 
+        public int GetUserId()
+
     }
 }
