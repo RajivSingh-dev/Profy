@@ -27,10 +27,10 @@ namespace Link_D.Service
             return false;
         }
         
-        public bool CheckUserExists(Login model)
+        public int? CheckUserExists(Login model)
         {
-
-            return projectContext.Users.Any(x => x.Email == model.Email && x.Password == model.Password);  
+            return projectContext.Users.FirstOrDefault(x => x.Email == model.Email)?.Id;
+         
         }
 
         public bool IsNew(string email) {
@@ -38,5 +38,10 @@ namespace Link_D.Service
             return projectContext.Users.Any(u => u.Email == email);
         
         }
+
+        public bool VerifyPassword(int? userId, string password)
+        {
+            return userId != null && projectContext.Users.Any(x => x.Id == userId && x.Password == password);
+        }
     }
-}
+}   

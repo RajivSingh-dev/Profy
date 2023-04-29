@@ -10,13 +10,25 @@ namespace Link_D.Extensions
 
         public static readonly string User_Id = "User_Id";
 
+        #endregion
+
+        public static readonly string User_;
 
         #region UserId
 
         public static void SetUserId(this ISession session, int val)
         {
-            session.Set(User_Id, val);
+            byte[] bytes = BitConverter.GetBytes(val);
+            session.Set(User_Id, bytes);
         }
+        
+        public static int GetUserId(this ISession session)
+        {
+            byte[] val = session.Get(User_Id);
+           return  BitConverter.ToInt32(val);
+        }
+
+        #endregion
 
     }
 }

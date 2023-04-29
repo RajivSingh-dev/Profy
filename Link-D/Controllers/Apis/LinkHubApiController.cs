@@ -1,4 +1,5 @@
-﻿using Link_D.Models.Api;
+﻿using Link_D.Extensions;
+using Link_D.Models.Api;
 using Link_D.Models.Data;
 using Link_D.Service;
 using Microsoft.AspNetCore.Mvc;
@@ -13,26 +14,28 @@ namespace Link_D.Controllers.Apis
     {
 
         private IUserService userService;
+        private IHttpContextAccessor _httpContextAccessor;
 
         
-        public LinkHubApiController(IUserService userService)
+        public LinkHubApiController(IUserService userService,IHttpContextAccessor httpContextAccessor)
         {
             this.userService= userService;
+            _httpContextAccessor= httpContextAccessor;
         }
 
 
         [HttpPost("Register")]
         public IActionResult Register([FromBody] User user)
         {
-           
            return userService.SaveUserData(user) ? Ok("Successfull saved") : Conflict("Email already exists"); 
             
         }
         
-        [HttpPost("Login")]
+        [HttpPost("Login")] 
         public IActionResult Login([FromBody] Login model)
         {
-            return userService.CheckUserExists(model) ? Ok("Login successfull"): BadRequest("Invalid email or password");
+            int? userId = userService.CheckUserExists(model); 
+           return userService.VerifyPassword(userId,model.Password)? Ok("Login successfull"): BadRequest("Invalid email or password");
         }
     }
 }

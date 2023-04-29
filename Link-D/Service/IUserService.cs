@@ -5,11 +5,12 @@ namespace Link_D.Service
 {
     public interface IUserService
     {
-        public bool SaveUserData(User user);
+         bool SaveUserData(User user);
 
-        public bool CheckUserExists(Login model);
+         int? CheckUserExists(Login model);
 
-        public int GetUserId()
+         bool VerifyPassword(int? userId,string password);
+
 
     }
 }
