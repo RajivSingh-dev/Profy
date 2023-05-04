@@ -12,7 +12,6 @@ namespace Link_D.Models.Data
         public int LikesCount { get; set; }
 
         public int UserId { get; set; }
-        public User User { get; set; }
         public List<Comment> comments { get; set; }
 
 
