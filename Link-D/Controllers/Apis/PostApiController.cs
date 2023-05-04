@@ -1,4 +1,5 @@
-﻿using Link_D.Service;
+﻿using Link_D.Extensions;
+using Link_D.Service;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Link_D.Controllers.Apis
@@ -9,19 +10,23 @@ namespace Link_D.Controllers.Apis
     {
 
         private IHttpContextAccessor _httpContextAccessor;
+        private IPostService _postService;  
         
 
-        public PostApiController(IHttpContextAccessor httpContextAccessor)
+        public PostApiController(IHttpContextAccessor httpContextAccessor, IPostService postService)
         {
             _httpContextAccessor = httpContextAccessor;
+            _postService = postService;
         }
 
 
-        [HttpPost("SavePost")]
-        public IActionResult Index()
+        [HttpPost("Save")]
+        public IActionResult Save([FromBody] string  text)
         {
-           
+            int userId = _httpContextAccessor.HttpContext.Session.GetUserId();
 
+            _postService.SavePost(userId,text);
+            
             return Ok();
         }
     }
