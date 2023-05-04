@@ -13,12 +13,12 @@ function inputFunction(element) {
 }
 
 function submitPostData(element) {
-    var data = $(element).prev().children("textarea").val();
+    var text = $(element).parent().prev().find("textarea").val();
 
-    $.ajax({
-        url: "/api/PostApi/SavePost",
+    $.ajax({    
+        url: "/api/PostApi/Save",
         type: "Post",
-        data: JSON.stringify({ text: data }),
+        data: JSON.stringify(text),
         contentType: "application/json",
         success: function (data) {
             window.location.href = "/LinkHubApi/Home"
