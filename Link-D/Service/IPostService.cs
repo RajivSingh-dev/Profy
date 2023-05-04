@@ -4,7 +4,7 @@ namespace Link_D.Service
 {
     public interface IPostService
     {
-        public void SavePost();
+        public void SavePost(int userId, string description);
 
     }
 }
