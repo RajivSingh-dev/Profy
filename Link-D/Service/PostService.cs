@@ -14,6 +14,9 @@ namespace Link_D.Service
    
         public void SavePost(int userId, string description)
         {
+            
+
+
             Post post = new Post();
             post.UserId = userId;
             post.Description = description;
