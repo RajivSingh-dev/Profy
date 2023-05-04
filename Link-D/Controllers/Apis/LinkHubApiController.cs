@@ -34,8 +34,15 @@ namespace Link_D.Controllers.Apis
         [HttpPost("Login")] 
         public IActionResult Login([FromBody] Login model)
         {
-            int? userId = userService.CheckUserExists(model); 
-           return userService.VerifyPassword(userId,model.Password)? Ok("Login successfull"): BadRequest("Invalid email or password");
+            int? userId = userService.CheckUserExists(model);
+            
+            if(userService.VerifyPassword(userId,model.Password))
+            {
+                _httpContextAccessor.HttpContext.Session.SetUserId(userId);
+                return Ok("Login successfull");
+            }
+            else
+              return BadRequest("Invalid email or password");
         }
     }
 }
