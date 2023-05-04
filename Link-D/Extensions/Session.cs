@@ -16,9 +16,9 @@ namespace Link_D.Extensions
 
         #region UserId
 
-        public static void SetUserId(this ISession session, int val)
+        public static void SetUserId(this ISession session, int? val)
         {
-            byte[] bytes = BitConverter.GetBytes(val);
+            byte[] bytes = BitConverter.GetBytes(val.Value);
             session.Set(User_Id, bytes);
         }
         
