@@ -1,6 +1,4 @@
-﻿@section Header {
-    @Html.Partial("_MenuBar")
- }
+﻿
 
 <div class="container mt-3 offset-md-1">
     <div class="row">
@@ -10,8 +8,7 @@
                 <img src="https://mdbootstrap.com/img/new/slides/041.jpg" class="card-img" alt="background image">
                 <div class="card-img-overlay d-flex align-items-end">
                     <div class="d-flex align-items-center">
-                        <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(31).jpg" class="rounded-circle me-3" alt="profile picture" width="60" height="60">
-                        <div>
+                            <img src="~/pics/profile.jpg" class="rounded-circle me-3 border border-2 border-white" alt="profile picture" width="80" height="80">                        <div>
                             <h5 class="card-title">Rajiv Singh</h5>
                             <p class="card-text">Associate software engineer</p>
                         </div>
@@ -27,10 +24,14 @@
                 <div class="card-body">
                     <h5 class="card-title">Card title</h5>
                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                    <a href="#" class="btn btn-primary" onclick="showActivity()">Activities</a>
                 </div>
             </div>
         </div>
         </div>
     
 </div>
+
+@section Header {
+    @Html.Partial("_MenuBar")
+ }
