@@ -14,8 +14,11 @@ namespace Link_D.Controllers.Views
         {
             return View();
         }
+        public IActionResult Profile()
+        {
+            return View();
+        }
 
-       
 
     }
 }
