@@ -72,3 +72,8 @@ function tooglePassword(element) {
 
 } 
 
+
+function redirectToProfileView()
+{
+    window.location.href = "/LinkHub/Profile";
+}
