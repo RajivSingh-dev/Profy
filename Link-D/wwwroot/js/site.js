@@ -77,3 +77,8 @@ function redirectToProfileView()
 {
     window.location.href = "/LinkHub/Profile";
 }
+
+function showActivity()
+{
+    window.location.href = "/LinkHub/Activity";
+}
