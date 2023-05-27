@@ -14,16 +14,18 @@ namespace Link_D.Service
    
         public void SavePost(int userId, string description)
         {
-            
-
-
             Post post = new Post();
             post.UserId = userId;
             post.Description = description;
-            _projectContext.post.Add(post);
+            _projectContext.posts.Add(post);
             _projectContext.SaveChanges();
 
-
         }
+
+        public IList<Post> GetPosts(int userId) 
+        { 
+             return _projectContext.posts.Where(post => post.UserId == userId).ToList();
+        }
+
     }
 }
