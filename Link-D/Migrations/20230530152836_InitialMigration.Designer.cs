@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Link_D.Migrations
 {
     [DbContext(typeof(ProjectContext))]
-    [Migration("20230409124044_AddingReplyModel")]
-    partial class AddingReplyModel
+    [Migration("20230530152836_InitialMigration")]
+    partial class InitialMigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -25,7 +25,7 @@ namespace Link_D.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("Link_D.Models.Comment", b =>
+            modelBuilder.Entity("Link_D.Models.Data.Comment", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -53,7 +53,7 @@ namespace Link_D.Migrations
                     b.ToTable("comment", (string)null);
                 });
 
-            modelBuilder.Entity("Link_D.Models.Post", b =>
+            modelBuilder.Entity("Link_D.Models.Data.Post", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -84,7 +84,7 @@ namespace Link_D.Migrations
                     b.ToTable("post", (string)null);
                 });
 
-            modelBuilder.Entity("Link_D.Models.Reply", b =>
+            modelBuilder.Entity("Link_D.Models.Data.Reply", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -106,7 +106,7 @@ namespace Link_D.Migrations
                     b.ToTable("reply", (string)null);
                 });
 
-            modelBuilder.Entity("Link_D.Models.User", b =>
+            modelBuilder.Entity("Link_D.Models.Data.User", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -130,7 +130,7 @@ namespace Link_D.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Phone")
+                    b.Property<string>("Profile")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -139,9 +139,9 @@ namespace Link_D.Migrations
                     b.ToTable("user", (string)null);
                 });
 
-            modelBuilder.Entity("Link_D.Models.Comment", b =>
+            modelBuilder.Entity("Link_D.Models.Data.Comment", b =>
                 {
-                    b.HasOne("Link_D.Models.Post", "post")
+                    b.HasOne("Link_D.Models.Data.Post", "post")
                         .WithMany("comments")
                         .HasForeignKey("PostId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -150,20 +150,18 @@ namespace Link_D.Migrations
                     b.Navigation("post");
                 });
 
-            modelBuilder.Entity("Link_D.Models.Post", b =>
+            modelBuilder.Entity("Link_D.Models.Data.Post", b =>
                 {
-                    b.HasOne("Link_D.Models.User", "User")
+                    b.HasOne("Link_D.Models.Data.User", null)
                         .WithMany("Posts")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("User");
                 });
 
-            modelBuilder.Entity("Link_D.Models.Reply", b =>
+            modelBuilder.Entity("Link_D.Models.Data.Reply", b =>
                 {
-                    b.HasOne("Link_D.Models.Comment", "CommentComment")
+                    b.HasOne("Link_D.Models.Data.Comment", "CommentComment")
                         .WithMany("reply")
                         .HasForeignKey("CommentId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -172,17 +170,17 @@ namespace Link_D.Migrations
                     b.Navigation("CommentComment");
                 });
 
-            modelBuilder.Entity("Link_D.Models.Comment", b =>
+            modelBuilder.Entity("Link_D.Models.Data.Comment", b =>
                 {
                     b.Navigation("reply");
                 });
 
-            modelBuilder.Entity("Link_D.Models.Post", b =>
+            modelBuilder.Entity("Link_D.Models.Data.Post", b =>
                 {
                     b.Navigation("comments");
                 });
 
-            modelBuilder.Entity("Link_D.Models.User", b =>
+            modelBuilder.Entity("Link_D.Models.Data.User", b =>
                 {
                     b.Navigation("Posts");
                 });
