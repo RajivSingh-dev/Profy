@@ -7,7 +7,7 @@ namespace Link_D.Controllers.Apis
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class PostApiController : Controller
+    public class PostApiController : ControllerBase
     {
 
         private IHttpContextAccessor _httpContextAccessor;
@@ -29,14 +29,6 @@ namespace Link_D.Controllers.Apis
             _postService.SavePost(userId,text);
             
             return Ok();
-        }
-
-        [HttpGet("Activity")]
-        public IActionResult Activity()
-        {
-            int userId = _httpContextAccessor.HttpContext.Session.GetUserId();
-            IList<Post> posts = _postService.GetPosts(userId);
-            return posts == null? NotFound() : Ok(posts);
         }
 
     }

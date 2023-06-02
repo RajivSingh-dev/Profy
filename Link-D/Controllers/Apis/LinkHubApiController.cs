@@ -10,17 +10,19 @@ namespace Link_D.Controllers.Apis
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class LinkHubApiController : ControllerBase
+    public class LinkHubApiController : Controller
     {
 
         private IUserService userService;
         private IHttpContextAccessor _httpContextAccessor;
-
+        private IPostService _postService;
+            
         
-        public LinkHubApiController(IUserService userService,IHttpContextAccessor httpContextAccessor)
+        public LinkHubApiController(IUserService userService,IHttpContextAccessor httpContextAccessor,IPostService postService)
         {
             this.userService= userService;
             _httpContextAccessor= httpContextAccessor;
+            _postService= postService;  
         }
 
 
@@ -43,6 +45,15 @@ namespace Link_D.Controllers.Apis
             }
             else
               return BadRequest("Invalid email or password");
+        }
+
+        [HttpGet("Activity")]
+        public IActionResult Activity()
+        {
+            int userId = _httpContextAccessor.HttpContext.Session.GetUserId();
+            User user = userService.GetUser(userId);
+            user.Posts = _postService.GetPosts(userId);
+            return PartialView("_UserActivity", user);
         }
     }
 }
