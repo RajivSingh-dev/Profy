@@ -9,7 +9,7 @@ namespace Link_D.Models.Data
         }
 
         public DbSet<User> Users { get; set; }
-        public DbSet<Post> post { get; set; }
+        public DbSet<Post> posts { get; set; }
         public DbSet<Comment> comments { get; set; }
         public DbSet<Reply> replies { get; set; }
 
