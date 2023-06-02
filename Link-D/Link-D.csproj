@@ -23,6 +23,16 @@
 
   <ItemGroup>
     <Folder Include="Views\Shared\LinkMenu\" />
+    <Folder Include="wwwroot\css\fontawesome\css\" />
+    <Folder Include="wwwroot\css\fontawesome\js\" />
+    <Folder Include="wwwroot\css\fontawesome\less\" />
+    <Folder Include="wwwroot\css\fontawesome\metadata\" />
+    <Folder Include="wwwroot\css\fontawesome\scss\" />
+    <Folder Include="wwwroot\css\fontawesome\sprites\" />
+    <Folder Include="wwwroot\css\fontawesome\svgs\brands\" />
+    <Folder Include="wwwroot\css\fontawesome\svgs\regular\" />
+    <Folder Include="wwwroot\css\fontawesome\svgs\solid\" />
+    <Folder Include="wwwroot\css\fontawesome\webfonts\" />
   </ItemGroup>
 
 </Project>
