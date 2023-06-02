@@ -10,6 +10,7 @@ namespace Link_D.Models.Data
         public DateTime CreatedOn { get; set; }
         public DateTime LastEdited { get; set; }
         public int LikesCount { get; set; }
+       
 
         public int UserId { get; set; }
         public List<Comment> comments { get; set; }
