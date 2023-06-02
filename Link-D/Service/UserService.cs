@@ -1,16 +1,17 @@
 ﻿using Link_D.Models.Api;
 using Link_D.Models.Data;
+using Microsoft.DotNet.Scaffolding.Shared.ProjectModel;
 
 namespace Link_D.Service
 {
     public class UserService : IUserService
     {
 
-        private ProjectContext projectContext;
+        private ProjectContext _projectContext;
 
         public UserService(ProjectContext projectContext)
         {
-            this.projectContext = projectContext;
+            _projectContext = projectContext;
         }
 
         public bool SaveUserData(User user)
@@ -18,8 +19,8 @@ namespace Link_D.Service
 
             if (!IsNew(user.Email))
             {
-                projectContext.Users.Add(user);
-                projectContext.SaveChanges();
+                _projectContext.Users.Add(user);
+                _projectContext.SaveChanges();
                 return true;
             }
 
@@ -29,19 +30,30 @@ namespace Link_D.Service
         
         public int? CheckUserExists(Login model)
         {
-            return projectContext.Users.FirstOrDefault(x => x.Email == model.Email)?.Id;
+            return _projectContext.Users.FirstOrDefault(x => x.Email == model.Email)?.Id;
          
         }
 
         public bool IsNew(string email) {
 
-            return projectContext.Users.Any(u => u.Email == email);
+            return _projectContext.Users.Any(u => u.Email == email);
         
         }
 
         public bool VerifyPassword(int? userId, string password)
         {
-            return userId != null && projectContext.Users.Any(x => x.Id == userId && x.Password == password);
+            return userId != null && _projectContext.Users.Any(x => x.Id == userId && x.Password == password);
+        }
+
+        public User GetUser(int userId) 
+        {
+            return _projectContext.Users.Find(userId);
+        }
+
+        public IList<Post> GetPosts(int userId)
+        {
+
+            return _projectContext.Users.Find(userId).Posts;
         }
     }
 }   

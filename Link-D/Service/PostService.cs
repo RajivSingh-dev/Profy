@@ -15,6 +15,9 @@ namespace Link_D.Service
         public void SavePost(int userId, string description)
         {
             Post post = new Post();
+            post.CreatedOn= DateTime.Now;
+            post.LastEdited= DateTime.Now;
+            post.Description= description;
             post.UserId = userId;
             post.Description = description;
             _projectContext.posts.Add(post);
