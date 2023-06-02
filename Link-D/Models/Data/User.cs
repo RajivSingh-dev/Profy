@@ -1,4 +1,6 @@
-﻿namespace Link_D.Models.Data
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Link_D.Models.Data
 {
     public class User
     {
@@ -8,12 +10,10 @@
         public string LName { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
+        public string Profile { get; set; } = "Associate Software Engineer";
 
-
-
-        public List<Post>? Posts { get; set; }
-
-
+       
+        public IList<Post>? Posts { get; set; }
 
     }
 }

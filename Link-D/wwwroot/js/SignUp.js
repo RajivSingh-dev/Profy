@@ -25,7 +25,7 @@ function signUp() {
             data: JSON.stringify(formData),
             contentType: "application/json",
             success: function (data) {
-                window.location.href = "/LinkHubApi/Home"
+                window.location.href = "/Home/Index"
             },
             error: function (error) {
                 if (error.status == 409)

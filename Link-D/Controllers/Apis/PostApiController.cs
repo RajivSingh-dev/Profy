@@ -1,4 +1,5 @@
 ﻿using Link_D.Extensions;
+using Link_D.Models.Data;
 using Link_D.Service;
 using Microsoft.AspNetCore.Mvc;
 
@@ -6,7 +7,7 @@ namespace Link_D.Controllers.Apis
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class PostApiController : Controller
+    public class PostApiController : ControllerBase
     {
 
         private IHttpContextAccessor _httpContextAccessor;
@@ -29,5 +30,6 @@ namespace Link_D.Controllers.Apis
             
             return Ok();
         }
+
     }
 }
