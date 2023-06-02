@@ -98,6 +98,9 @@ StyleCopReport.xml
 *.svclog
 *.scc
 
+# Fontawesome folder (not needed for the project)
+/fontawesome/
+
 # Chutzpah Test files
 _Chutzpah*
 
