@@ -21,7 +21,7 @@ function submitPostData(element) {
         data: JSON.stringify(text),
         contentType: "application/json",
         success: function (data) {
-            window.location.href = "/LinkHubApi/Home"
+            window.location.href = "/LinkHub/Home"
         },
         error: function (error) {
             if (error.status == 409) {
