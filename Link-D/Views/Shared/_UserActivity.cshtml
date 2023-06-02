@@ -1,33 +1,50 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
-<div class="card mb-3">
-    <div class="card-body">
-        <div class="d-flex align-items-center mb-2">
-            <img src="user.jpg" alt="User" class="rounded-circle me-2" width="50" height="50">
-            <div>
-                <h6 class="card-title mb-0">User Name</h6>
-                <p class="card-text text-muted small mb-0">User Title</p>
-                <p class="card-text text-muted small">2h • <i class="fas fa-globe-americas"></i></p>
+﻿@using Link_D.Models.Data;
+
+
+@model User
+<div id="userActivityDiv">
+    @foreach (var post in Model.Posts) // loop through the list of posts
+    {
+        <div class="card mb-3">
+            <div class="card-body">
+                <div class="d-flex align-items-center mb-2">
+                    <img src="" alt="User" class="rounded-circle me-2" width="50" height="50">
+                    <div>
+                        <h6 class="card-title mb-0">@Model.FName</h6>
+                        <h6 class="card-title mb-0">@Model.LName</h6>
+                        <p class="card-text text-muted small mb-0">@Model.Profile</p>
+                        <p class="card-text text-muted small">@post.CreatedOn • <i class="fas fa-globe-americas"></i></p>
+                    </div>
+                </div>
+                <p class="card-text">@post.Description</p>
+@*                <img src="" alt="Post" class="card-img-top mb-2">
+            *@                <div class="d-flex justify-content-between align-items-center">
+                    <div class="d-flex align-items-center">
+                        <button type="button" class="btn me-1 btn btn-light" onclick="">
+                            <i class="fa-regular fa-thumbs-up"></i>
+                            <span class="card-text text-muted small mb-0 me-2">Like</span>
+                        </button>
+                        <button type="button" class="btn me-1 btn btn-light">
+                            <i class="fa-regular fa-comment"></i>
+                            <span class="card-text text-muted small mb-0 me-2">Comment</span>
+                        </button>
+                        <button type="button" class="btn me-1 btn btn-light">
+                            <i class="fa-regular fa-share-square"></i>
+                            <span class="card-text text-muted small mb-0 me-2">Repost</span>
+                        </button>
+                        <button type="button" class="btn me-1 btn btn-light">
+                            <i class="fa-regular fa-paper-plane"></i>
+                             <span class="card-text text-muted small mb-0 me-2">Send</span>
+                        </button>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        
+                    </div>
+                </div>
+
+
             </div>
         </div>
-        <p class="card-text">This is a LinkedIn post example.</p>
-        <img src="post.jpg" alt="Post" class="card-img-top mb-2">
-        <div class="d-flex justify-content-between align-items-center">
-            <div class="d-flex align-items-center">
-                <i class="far fa-thumbs-up me-1"></i>
-                <i class="far fa-heart me-1"></i>
-                <i class="far fa-laugh-squint me-1"></i>
-                <p class="card-text text-muted small mb-0 me-2">100 • 5 comments</p>
-            </div>
-            <div class="d-flex align-items-center">
-                <p class="card-text text-muted small mb-0 me-2">Like</p>
-                <p class="card-text text-muted small mb-0 me-2">Comment</p>
-                <p class="card-text text-muted small mb-0 me-2">Share</p>
-                <i class="fas fa-paper-plane me-1"></i>
-            </div>
-        </div>
-    </div>
+    }
 </div>
+

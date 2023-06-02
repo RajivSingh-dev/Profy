@@ -1,10 +1,14 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@using Link_D.Models.Data;
 
 @section Header{
     @await Html.PartialAsync("_MenuBar")
 }
+
+@section Scripts{
+    <script src="~/js/activity.js" defer></script>
+}
+@model IList<Post>
+
 <div class="container">
     <div class="row">
         <div class="col-md-6 offset-md-3" style="width:600px">
@@ -12,13 +16,17 @@
                 <div class="card-body">
                     <h5 class="card-title">All activity</h5>
                     <div class="d-flex align-items-center mt-3 mb-3">
-                        <button type="button" class="btn btn-outline-secondary rounded-pill me-2"> Posts </button>
+                        <button type="button" id="loadPosts" onclick="getPosts()" class="btn btn-outline-secondary rounded-pill me-2"> Posts </button>
                         <button type="button" class="btn btn-outline-secondary rounded-pill me-2"> Comments </button>
                         <button type="button" class="btn btn-outline-secondary rounded-pill"> Likes </button>
                     </div>
-                    @await Html.PartialAsync("_UserActivity")
+                    <div id="postsDiv">
+                        
+                    </div> <!-- this is where the partial view will be appended -->
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+
