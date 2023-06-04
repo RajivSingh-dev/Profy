@@ -1,8 +1,9 @@
-﻿using Link_D.Models.Api;
-using Link_D.Models.Data;
-using Microsoft.DotNet.Scaffolding.Shared.ProjectModel;
+﻿using LinkD.Models.Api;
+using LinkD.Models.Data;
 
-namespace Link_D.Service
+
+
+namespace LinkD.Service
 {
     public class UserService : IUserService
     {

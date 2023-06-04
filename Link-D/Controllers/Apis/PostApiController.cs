@@ -1,9 +1,9 @@
-﻿using Link_D.Extensions;
-using Link_D.Models.Data;
-using Link_D.Service;
+﻿using LinkD.Extensions;
+using LinkD.Models.Data;
+using LinkD.Service;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Link_D.Controllers.Apis
+namespace LinkD.Controllers.Apis
 {
     [ApiController]
     [Route("api/[controller]")]

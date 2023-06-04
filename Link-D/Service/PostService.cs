@@ -1,6 +1,6 @@
-﻿using Link_D.Models.Data;
+﻿using LinkD.Models.Data;
 
-namespace Link_D.Service
+namespace LinkD.Service
 {
     public class PostService : IPostService
     {

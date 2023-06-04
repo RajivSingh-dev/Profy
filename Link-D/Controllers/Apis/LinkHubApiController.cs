@@ -1,12 +1,12 @@
-﻿using Link_D.Extensions;
-using Link_D.Models.Api;
-using Link_D.Models.Data;
-using Link_D.Service;
+﻿using LinkD.Extensions;
+using LinkD.Models.Api;
+using LinkD.Models.Data;
+using LinkD.Service;
 using Microsoft.AspNetCore.Mvc;
-using Newtonsoft.Json;
-using System.Text.Json.Nodes;
 
-namespace Link_D.Controllers.Apis
+
+
+namespace LinkD.Controllers.Apis
 {
     [ApiController]
     [Route("api/[controller]")]

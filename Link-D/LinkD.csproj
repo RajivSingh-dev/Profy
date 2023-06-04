@@ -15,7 +15,7 @@
     <Folder Include="wwwroot\css\fontawesome\metadata\" />
     <Folder Include="wwwroot\css\fontawesome\scss\" />
     <Folder Include="wwwroot\css\fontawesome\sprites\" />
-    <Folder Include="wwwroot\css\fontawesome\svgs\brands\" />
+    <Folder Include="wwwroot\css\fontawesome\svgs\brands\" /> 
     <Folder Include="wwwroot\css\fontawesome\svgs\regular\" />
     <Folder Include="wwwroot\css\fontawesome\svgs\solid\" />
     <Folder Include="wwwroot\css\fontawesome\webfonts\" />
@@ -29,7 +29,10 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="7.0.6" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <ProjectReference Include="..\LinkD.Models\Profy.LinkD.Data.csproj" />
   </ItemGroup>
 
 </Project>

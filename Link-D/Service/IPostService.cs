@@ -1,7 +1,7 @@
-﻿using Link_D.Models.Api;
-using Link_D.Models.Data;
+﻿using LinkD.Models.Api;
+using LinkD.Models.Data;
 
-namespace Link_D.Service
+namespace LinkD.Service
 {
     public interface IPostService
     {

@@ -1,6 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using LinkD.Models.Data;
 
-namespace Link_D.Models.Data
+namespace LinkD.Data.Models
 {
     public class User
     {

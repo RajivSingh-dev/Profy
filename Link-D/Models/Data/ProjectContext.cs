@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-namespace Link_D.Models.Data
+
+namespace LinkD.Models.Data
 {
     public class ProjectContext : DbContext
     {

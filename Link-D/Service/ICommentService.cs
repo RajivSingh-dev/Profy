@@ -1,4 +1,4 @@
-﻿namespace Link_D.Service
+﻿namespace LinkD.Service
 {
     public class ICommentService
     {

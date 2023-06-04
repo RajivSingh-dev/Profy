@@ -1,8 +1,8 @@
-﻿using Link_D.Models;
+﻿using LinkD.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
-namespace Link_D.Controllers
+namespace LinkD.Controllers
 {
     public class HomeController : Controller
     {

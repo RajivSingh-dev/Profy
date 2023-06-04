@@ -1,7 +1,6 @@
-﻿using Link_D.Models.Data;
-using Microsoft.CodeAnalysis.CSharp.Syntax;
+﻿using LinkD.Models.Data;
 
-namespace Link_D.Extensions
+namespace LinkD.Extensions
 {
     public static class Session
     {

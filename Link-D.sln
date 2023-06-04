@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33403.182
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Link-D", "Link-D\Link-D.csproj", "{9E0735A5-213C-4C9E-9FC2-D25EB8F86F8B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LinkD", "Link-D\LinkD.csproj", "{9E0735A5-213C-4C9E-9FC2-D25EB8F86F8B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinkD.Authentication", "LinkD.Authentication\LinkD.Authentication.csproj", "{1E0BA7DA-1637-4685-A436-DA225B5D8A94}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Profy.LinkD.Authentication", "LinkD.Authentication\Profy.LinkD.Authentication.csproj", "{1E0BA7DA-1637-4685-A436-DA225B5D8A94}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Profy.LinkD.Data", "LinkD.Models\Profy.LinkD.Data.csproj", "{F7780B5F-7DD7-49AF-91AC-AC51FF41F0FD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{1E0BA7DA-1637-4685-A436-DA225B5D8A94}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1E0BA7DA-1637-4685-A436-DA225B5D8A94}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1E0BA7DA-1637-4685-A436-DA225B5D8A94}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F7780B5F-7DD7-49AF-91AC-AC51FF41F0FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7780B5F-7DD7-49AF-91AC-AC51FF41F0FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7780B5F-7DD7-49AF-91AC-AC51FF41F0FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7780B5F-7DD7-49AF-91AC-AC51FF41F0FD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

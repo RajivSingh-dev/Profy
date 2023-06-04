@@ -1,4 +1,4 @@
-namespace Link_D.Models
+namespace LinkD.Models
 {
     public class ErrorViewModel
     {
