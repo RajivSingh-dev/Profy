@@ -19,8 +19,6 @@
     <PackageReference Include="Microsoft.Extensions.Identity.Core" Version="6.0.5" />
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\Profy.LinkD.Data\Profy.LinkD.Data.csproj" />
-  </ItemGroup>
+ 
   
 </Project>

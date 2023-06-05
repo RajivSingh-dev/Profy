@@ -1,8 +1,9 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.AspNetCore.Identity;
+using System.ComponentModel.DataAnnotations;
 
 namespace Profy.LinkD.Data.Models
 {
-    public class User
+    public class User : IdentityUser
     {
 
         public int Id { get; set; }
