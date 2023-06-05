@@ -1,5 +1,6 @@
 ﻿using LinkD.Models.Api;
 using LinkD.Models.Data;
+using Profy.LinkD.Data.Models;
 
 namespace LinkD.Service
 {

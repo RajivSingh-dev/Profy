@@ -3,8 +3,7 @@ using LinkD.Models.Api;
 using LinkD.Models.Data;
 using LinkD.Service;
 using Microsoft.AspNetCore.Mvc;
-
-
+using Profy.LinkD.Data.Models;
 
 namespace LinkD.Controllers.Apis
 {

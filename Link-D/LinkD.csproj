@@ -30,9 +30,13 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
   </ItemGroup>
-  
+
   <ItemGroup>
-    <ProjectReference Include="..\LinkD.Models\Profy.LinkD.Data.csproj" />
+    <ProjectReference Include="..\Profy.LinkD.Data\Profy.LinkD.Data.csproj" />
   </ItemGroup>
+
+ 
+  
+
 
 </Project>

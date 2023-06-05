@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 
-namespace LinkD.Models.Data
+namespace Profy.LinkD.Data.Models
 {
     public class Post
     {

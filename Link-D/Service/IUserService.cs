@@ -1,5 +1,5 @@
-﻿using LinkD.Data.Models;
-using LinkD.Models.Api;
+﻿using LinkD.Models.Api;
+using Profy.LinkD.Data.Models;
 
 namespace LinkD.Service
 {

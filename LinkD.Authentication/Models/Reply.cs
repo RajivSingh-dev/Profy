@@ -1,4 +1,4 @@
-﻿namespace LinkD.Models.Data
+﻿namespace Profy.LinkD.Data.Models
 {
     public class Reply
     {

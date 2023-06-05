@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-
+using Profy.LinkD.Data.Models;
 
 namespace LinkD.Models.Data
 {

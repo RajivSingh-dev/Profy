@@ -1,8 +1,6 @@
 ﻿using LinkD.Models.Api;
 using LinkD.Models.Data;
 
-
-
 namespace LinkD.Service
 {
     public class UserService : IUserService
