@@ -42,7 +42,7 @@ namespace LinkD.Service
 
         public bool VerifyPassword(int? userId, string password)
         {
-            return userId != null && _projectContext.Users.Any(x => x.Id == userId && x.Password == password);
+            return userId != null && _projectContext.Users.Any(x => x.Id == userId && x.PasswordHash == password);
         }
 
         public User GetUser(int userId) 
