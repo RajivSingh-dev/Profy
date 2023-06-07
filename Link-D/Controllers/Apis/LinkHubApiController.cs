@@ -39,7 +39,7 @@ namespace LinkD.Controllers.Apis
             
             if(userService.VerifyPassword(userId,model.Password))
             {
-                _httpContextAccessor.HttpContext.Session.SetUserId(userId);
+                 _httpContextAccessor.HttpContext.Session.SetUserId(userId);
                 return Ok("Login successfull");
             }
             else
