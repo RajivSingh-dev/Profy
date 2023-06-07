@@ -1,5 +1,6 @@
 ﻿using LinkD.Models.Api;
 using LinkD.Models.Data;
+using Microsoft.AspNetCore.Identity;
 using Profy.LinkD.Data.Models;
 
 namespace LinkD.Service
@@ -8,15 +9,18 @@ namespace LinkD.Service
     {
 
         private ProjectContext _projectContext;
+        private readonly IPasswordHasher<User> _passwordHasher;
 
-        public UserService(ProjectContext projectContext)
+        public UserService(ProjectContext projectContext,IPasswordHasher<User> passwordHasher)
         {
             _projectContext = projectContext;
+            _passwordHasher = passwordHasher;
         }
 
         public bool SaveUserData(User user)
         {
-
+            var hashedPassword = _passwordHasher.HashPassword(user, user.Password);
+            user.PasswordHash = hashedPassword;
             if (!IsNew(user.Email))
             {
                 _projectContext.Users.Add(user);
@@ -42,7 +46,13 @@ namespace LinkD.Service
 
         public bool VerifyPassword(int? userId, string password)
         {
-            return userId != null && _projectContext.Users.Any(x => x.Id == userId && x.PasswordHash == password);
+
+            if (userId == null) return false;
+            User user = _projectContext.Users.Find(userId);
+            if (user == null) return false;
+            string hashedPassword = user.PasswordHash;
+            PasswordVerificationResult result = new PasswordHasher<User>().VerifyHashedPassword(user, hashedPassword, password);
+            return result == PasswordVerificationResult.Success;
         }
 
         public User GetUser(int userId) 

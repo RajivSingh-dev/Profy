@@ -28,7 +28,7 @@ namespace LinkD.Controllers.Apis
         [HttpPost("Register")]
         public IActionResult Register([FromBody] User user)
         {
-           return userService.SaveUserData(user) ? Ok("Successfull saved") : Conflict("Email already exists"); 
+           return userService.SaveUserData(user) ? Ok("Successfully saved") : Conflict("Email already exists"); 
             
         }
         
