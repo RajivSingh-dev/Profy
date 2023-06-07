@@ -16,7 +16,7 @@ namespace LinkD.Controllers.Apis
 
         public PostApiController(IHttpContextAccessor httpContextAccessor, IPostService postService)
         {
-            _httpContextAccessor = httpContextAccessor;
+            _httpContextAccessor =  httpContextAccessor;
             _postService = postService;
         }
 
